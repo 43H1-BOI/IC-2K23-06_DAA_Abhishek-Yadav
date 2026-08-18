@@ -1,0 +1,11 @@
+PURPOSE
+Sort in place by partitioning around a pivot.
+
+HOW THE CODE WORKS
+1. partition(arr, lo, hi) takes arr[hi] as the pivot. 'i' marks the end of the 'smaller or equal' region. Every arr[j] <= pivot is swapped into that region.
+2. Finally the pivot is swapped to position i+1 and that index is returned: everything to its left is <= pivot, everything to its right is larger.
+3. quickSort() calls partition, then sorts the left part and the right part recursively. A range of size 0 or 1 stops the recursion.
+4. swapValues() swaps two ints through references.
+
+COMPLEXITY
+Balanced splits: O(n log n). Sorted input with last-element pivot gives splits of size n-1 and 0: O(n^2) (measured in Sorting-Performance).

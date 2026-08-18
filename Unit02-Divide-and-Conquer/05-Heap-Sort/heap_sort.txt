@@ -1,0 +1,11 @@
+PURPOSE
+Sort using a max-heap stored inside the array itself.
+
+HOW THE CODE WORKS
+1. heapify(arr, n, i) makes the subtree at i a max-heap, assuming both child subtrees already are. It finds the largest among i and its children 2i+1, 2i+2; if a child is larger it swaps and continues downward.
+2. heapSort() first calls heapify for i = n/2-1 down to 0 (the non-leaf nodes) to build the heap.
+3. Then the root (largest) is swapped with the last element of the heap, the heap size 'end' shrinks by one, and heapify(arr, end, 0) repairs the root.
+4. After n-1 rounds the array is sorted in ascending order.
+
+COMPLEXITY
+Build heap O(n); n-1 extractions at O(log n) each: O(n log n) always. Memory O(1) extra.

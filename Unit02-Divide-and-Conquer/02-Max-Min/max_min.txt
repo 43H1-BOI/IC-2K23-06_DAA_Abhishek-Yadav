@@ -1,0 +1,11 @@
+PURPOSE
+Find maximum and minimum together with fewer comparisons than two separate scans.
+
+HOW THE CODE WORKS
+1. maxMin(arr, lo, hi, mx, mn) fills mx and mn, which are references to variables in the caller (that is how one function 'returns' two values).
+2. One element: both are that element. Two elements: one comparison decides which is max and which is min.
+3. Otherwise the range is split at mid, both halves are solved, and two comparisons combine the answers.
+4. The global counter 'comparisons' is increased at every comparison and printed beside the 2(n-1) that a simple scan would need.
+
+COMPLEXITY
+T(n) = 2T(n/2) + 2 gives 3n/2 - 2 comparisons for n a power of two; O(n) time.

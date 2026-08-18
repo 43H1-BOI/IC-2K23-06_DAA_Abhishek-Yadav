@@ -1,0 +1,11 @@
+PURPOSE
+Sort by splitting, sorting the halves, and merging them.
+
+HOW THE CODE WORKS
+1. mergeSort(arr, lo, hi) returns at once if the range has 0 or 1 element (already sorted). Otherwise it sorts the left half, the right half, then calls merge().
+2. merge() uses three indexes: i over the left half, j over the right half, k over temp. It copies the smaller front element each time (<= keeps equal values in order), then copies whatever is left in either half.
+3. The merged block temp[lo..hi] is copied back into arr.
+4. main() reads and validates the input, calls mergeSort(arr, 0, n-1) and prints the result.
+
+COMPLEXITY
+log n levels of recursion, O(n) merging work per level: O(n log n) in best, average and worst case. Extra space O(n).

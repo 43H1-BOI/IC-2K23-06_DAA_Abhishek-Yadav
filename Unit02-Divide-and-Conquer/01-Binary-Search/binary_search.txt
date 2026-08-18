@@ -1,0 +1,11 @@
+PURPOSE
+Search a sorted array by repeatedly halving the search range.
+
+HOW THE CODE WORKS
+1. main() reads the array; every element must be >= the previous one (the 'prev' variable is used as the lower limit in readInt), so the array is guaranteed sorted.
+2. binarySearch(arr, lo, hi, key) is recursive. If lo > hi the range is empty, so the key is absent (-1).
+3. mid = lo + (hi-lo)/2 is checked and printed. Equal -> return mid. key < arr[mid] -> recurse on the left half, otherwise on the right half.
+4. main() prints the index or 'not found'.
+
+COMPLEXITY
+The range halves each call, so at most about log2(n)+1 calls: O(log n). The recursion depth gives O(log n) stack space.
