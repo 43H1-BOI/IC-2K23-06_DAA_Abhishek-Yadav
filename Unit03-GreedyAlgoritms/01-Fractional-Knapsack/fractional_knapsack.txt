@@ -1,0 +1,8 @@
+PURPOSE
+Fill a knapsack with the most valuable mix of items when items can be split.
+
+HOW THE CODE WORKS
+1. Each item is a struct (id, weight, value, ratio). main() reads and validates n, capacity and every item, computing ratio = value / weight.
+2. sortByRatio() orders the array with a simple selection sort, highest ratio first (the program stays dependency-free; std::sort would be O(n log n)).
+3. The loop takes an item completely if its weight fits in 'remaining'; otherwise it takes fraction = remaining / weight, which empties the knapsack, and the loop ends.
+4. The table printed shows what percentage of each item was taken and the final maximum value.

@@ -1,0 +1,11 @@
+PURPOSE
+Choose and order unit-time jobs to earn the highest profit within their deadlines.
+
+HOW THE CODE WORKS
+1. Jobs are stored as structs (id, deadline, profit) and validated on input.
+2. A bubble sort puts jobs in descending order of profit.
+3. slot[t] holds the id of the job running at time t (0 = free). For each job the loop tries t = deadline, deadline-1, ... 1 and uses the first free slot, adding the job's profit.
+4. A job with no free slot is simply skipped. The schedule and the total profit are printed.
+
+COMPLEXITY
+Sorting O(n^2) (bubble sort) and slot search O(n) per job: O(n^2) overall.

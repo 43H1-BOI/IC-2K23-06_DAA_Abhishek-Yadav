@@ -1,0 +1,9 @@
+PURPOSE
+Connect all vertices with the least total edge weight by growing one tree.
+
+HOW THE CODE WORKS
+1. main() reads V and the edges (u v weight) and stores them in graph[][] symmetrically (0 means no edge). Self-loops are rejected.
+2. key[v] is the cheapest edge known from the tree to v, parent[v] is the tree vertex that edge comes from, inTree[v] marks vertices already added.
+3. Each round picks the vertex u outside the tree with minimum key, adds it, adds key[u] to the total, and lowers the keys of u's neighbours when the edge via u is cheaper.
+4. If the smallest key is still INF the graph is disconnected, so no spanning tree exists.
+5. Finally the edges parent[v]-v and the total are printed.

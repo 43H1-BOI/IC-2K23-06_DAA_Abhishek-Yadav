@@ -1,0 +1,9 @@
+PURPOSE
+Build a minimum spanning tree by taking the cheapest edges that do not make a cycle.
+
+HOW THE CODE WORKS
+1. Edges are stored as structs (u, v, w). An insertion sort orders them by weight.
+2. parent[] is the Union-Find array: initially parent[i] = i, so every vertex is its own set.
+3. findSet(x) follows parent links to the set representative and flattens the path on the way back (path compression), which keeps later searches fast.
+4. For each edge in order: if the two endpoints have different representatives the edge joins two components, so it is printed, its weight added, and the sets merged (parent[a] = b). Otherwise it would create a cycle and is skipped.
+5. The scan stops after V-1 edges. If fewer were found the graph was disconnected.
