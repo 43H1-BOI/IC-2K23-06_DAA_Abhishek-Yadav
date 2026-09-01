@@ -1,0 +1,8 @@
+PURPOSE
+Show how storing sub-results turns exponential recursion into linear time.
+
+HOW THE CODE WORKS
+1. memo[] is a global table; every entry starts at -1 meaning 'not computed yet'.
+2. fibMemo(n) returns n for n < 2. If memo[n] is already known it returns it immediately. Otherwise it computes fibMemo(n-1)+fibMemo(n-2), stores the answer in memo[n], and returns it.
+3. fibNaive(n) is the plain recursion. Both functions increase a call counter so the program can print how many calls each needed.
+4. n is limited to 90 because fib(91) no longer fits in a long long. The plain version is skipped for n > 35 because it would take far too long.

@@ -1,0 +1,10 @@
+PURPOSE
+Exact TSP solution using dynamic programming over subsets of cities.
+
+HOW THE CODE WORKS
+1. A subset of cities is stored in an int: bit i is 1 when city i has been visited (mask & (1 << i) tests it).
+2. dp[mask][last] is the cheapest path from city 0 through all cities in mask ending at 'last'. dp[1][0] = 0 (only city 0 visited).
+3. Masks are processed in increasing order. For each reachable (mask, last) the code tries every unvisited city 'next', and keeps the cheaper value in dp[mask | 1<<next][next], remembering 'last' in from[][].
+4. The best tour closes the loop: min over last of dp[full][last] + cost[last][0].
+5. The tour is rebuilt backwards from the best last city using from[][].
+Tables are 'static' because they are large and are better kept outside the stack.

@@ -1,0 +1,8 @@
+PURPOSE
+Compute shortest distances between all pairs of vertices.
+
+HOW THE CODE WORKS
+1. dist[i][j] starts as 0 on the diagonal, the edge weight where an edge exists, and INF otherwise (INF = 1,000,000,000).
+2. The three nested loops try every vertex k as an intermediate stop: if dist[i][k] + dist[k][j] < dist[i][j], the shorter route is stored. The check 'dist[i][k] < INF && dist[k][j] < INF' stops INF from being added.
+3. A negative number on the diagonal after the loops means a negative cycle: distances are meaningless and the program says so.
+4. Otherwise the matrix is printed, INF meaning 'no path'.

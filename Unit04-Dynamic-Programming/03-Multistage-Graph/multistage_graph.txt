@@ -1,0 +1,8 @@
+PURPOSE
+Find the minimum-cost route through a graph arranged in stages.
+
+HOW THE CODE WORKS
+1. The user gives the number of stages and how many vertices each stage has (first and last stage must have exactly one: source and sink). Vertices get numbers 0,1,2... stage by stage; stageOf[v] stores each vertex's stage.
+2. Each edge u v w is accepted only if v is in the stage right after u's stage, otherwise the program asks again.
+3. cost[i] is the cheapest cost from vertex i to the sink. Going from the last vertex backwards, cost[i] is the minimum of w(i,j)+cost[j] over edges, and nextVertex[i] stores the j that gave it.
+4. The path is printed by starting at 0 and following nextVertex until -1 (the sink).

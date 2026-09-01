@@ -1,0 +1,8 @@
+PURPOSE
+Choose whole items for maximum value under a weight limit.
+
+HOW THE CODE WORKS
+1. weight[] and value[] are 1-indexed so row i of the table matches item i. dp[0][*] and dp[*][0] are 0 (no items / no capacity).
+2. For every item i and capacity w: first copy the 'skip' answer dp[i-1][w]; if the item fits, compare with taking it: value[i] + dp[i-1][w-weight[i]] and keep the larger.
+3. The whole table is printed (n <= 10 and W <= 50 keep it small enough to read).
+4. Trace-back: start at (n, W). If dp[i][w] != dp[i-1][w], item i was taken: print it and reduce w by its weight. Otherwise move up.

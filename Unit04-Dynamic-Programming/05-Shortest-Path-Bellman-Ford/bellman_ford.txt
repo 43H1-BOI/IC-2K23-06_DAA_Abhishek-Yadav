@@ -1,0 +1,8 @@
+PURPOSE
+Single-source shortest paths when edges may be negative.
+
+HOW THE CODE WORKS
+1. Edges are kept in an array of structs (from, to, weight). dist[] starts at INF except dist[source] = 0.
+2. The outer loop runs V-1 times; each time every edge (u,v,w) is relaxed: if dist[u] + w is smaller than dist[v], dist[v] and parent[v] are updated. The test dist[u] < INF avoids using unreachable vertices.
+3. A final pass checks every edge again. If any edge can still relax, a negative cycle is reachable and the program stops with a message.
+4. printPath() follows parent[] back to the source recursively and prints the route; unreachable vertices are reported.
