@@ -1,0 +1,8 @@
+PURPOSE
+Explore a graph in layers outward from a start vertex.
+
+HOW THE CODE WORKS
+1. The graph is an adjacency matrix. level[v] = -1 means 'not visited yet'.
+2. The queue is an int array with 'head' (next to remove) and 'tail' (next free slot). Each vertex enters it at most once because it is marked visited with its level before being enqueued.
+3. Removing u, the code scans row u of the matrix; each neighbour v with level -1 gets level[u] + 1 and joins the queue.
+4. The visiting order and the level table are printed; level -1 is shown as 'not reachable'.

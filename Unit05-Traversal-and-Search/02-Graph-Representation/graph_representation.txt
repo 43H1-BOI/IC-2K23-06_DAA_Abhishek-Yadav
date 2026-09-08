@@ -1,0 +1,8 @@
+PURPOSE
+Show how a graph is stored as an adjacency matrix and an adjacency list.
+
+HOW THE CODE WORKS
+1. matrix[][] is a plain 2-D int array; for an undirected edge both matrix[u][v] and matrix[v][u] are set to 1.
+2. adj[v] is a pointer to the first ListNode of v's neighbour list (NULL when empty). addToList() creates a node and appends it at the tail, so neighbours appear in the order the edges were entered. Each edge is added to both endpoints' lists.
+3. The input loop rejects self-loops and edges that already exist.
+4. Printing walks each list with 'for (cur = adj[i]; cur; cur = cur->next)', counting the degree, and deletes the nodes as it goes.

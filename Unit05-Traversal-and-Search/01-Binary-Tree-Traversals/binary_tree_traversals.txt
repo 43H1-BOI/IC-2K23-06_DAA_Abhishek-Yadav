@@ -1,0 +1,9 @@
+PURPOSE
+Show the four standard ways to walk through a binary tree.
+
+HOW THE CODE WORKS
+1. Node is a struct holding data and pointers to the left and right child.
+2. buildTree() creates the root, puts it in a queue, and for every node taken from the queue reads the next two list values as its left and right child (-1 = none). Created children join the queue.
+3. inorder(), preorder() and postorder() call themselves on the left and right child and print the node at different moments.
+4. levelOrder() dequeues a node, prints it and enqueues its children, giving level-by-level order.
+5. freeTree() deletes children before the parent so no memory is leaked.

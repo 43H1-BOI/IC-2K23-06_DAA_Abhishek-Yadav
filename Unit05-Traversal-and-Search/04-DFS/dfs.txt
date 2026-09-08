@@ -1,0 +1,8 @@
+PURPOSE
+Traverse a graph depth first and find its connected components.
+
+HOW THE CODE WORKS
+1. The graph, V, a time counter and the discovery[]/finish[] arrays are global so the recursive dfs(u) can share them; discovery[v] == 0 means not visited.
+2. dfs(u) stamps discovery[u], prints u, calls itself for each unvisited neighbour (matrix row u), then stamps finish[u] when all neighbours are done.
+3. main() runs dfs(start) first, then scans for vertices still undiscovered and starts a new dfs from each; each such start is one more connected component ('|' in the output separates them).
+4. The time table is printed at the end. A vertex's interval [discovery, finish] contains the intervals of all its descendants.
