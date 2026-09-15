@@ -1,0 +1,9 @@
+PURPOSE
+Find every subset of the given numbers that sums to the target.
+
+HOW THE CODE WORKS
+1. weight[] holds the numbers, chosen[] records the take/skip decision for each item, 'total' is the sum of all weights.
+2. findSubsets(i, currentSum, remaining): 'remaining' is the sum of items i..n-1.
+3. If currentSum == target a subset is printed from chosen[0..i-1] and the branch ends (all weights are positive, so adding more would overshoot).
+4. A branch is cut if all items are used, the sum is already too big, or the sum plus everything left still falls short of the target.
+5. Otherwise two recursive calls explore 'take item i' and 'skip item i'.

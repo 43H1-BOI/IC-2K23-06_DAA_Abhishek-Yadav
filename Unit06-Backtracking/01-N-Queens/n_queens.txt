@@ -1,0 +1,8 @@
+PURPOSE
+Find all ways to put N non-attacking queens on a board.
+
+HOW THE CODE WORKS
+1. col[r] holds the column of the queen in row r, so a whole board is just N numbers.
+2. isSafe(row, c) compares the new position with every queen already placed above: the same column (col[r] == c) or the same diagonal (|col[r]-c| equals the row distance) means an attack.
+3. placeQueens(row) tries each column in the row. When a queen is safe it is stored and the function recurses to the next row. When the call comes back, the loop goes on with the next column - the previous choice is overwritten, which is the backtrack.
+4. When row == N all queens are placed: the solution counter increases and the first solution is copied for printing.
