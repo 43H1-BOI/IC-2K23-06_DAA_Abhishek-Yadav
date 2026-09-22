@@ -1,0 +1,9 @@
+PURPOSE
+Exact TSP with pruning, faster than plain exhaustive search on most inputs.
+
+HOW THE CODE WORKS
+1. While reading the matrix the program stores minOut[i] = the cheapest edge leaving city i.
+2. explore(depth, last, costSoFar) tries each unvisited city 'next'. The lower bound for that choice is newCost + minOut[next] + minOut of every other unvisited city: each of those cities must still be left once, and cannot do so for less than its cheapest edge.
+3. If bound >= bestCost the branch is skipped (pruned). Otherwise the city is added to path[] and the recursion continues; afterwards visited[next] is cleared (backtrack).
+4. At depth == n the closing edge to city 0 is added; a cheaper tour replaces the best.
+5. The program prints the best cost, the tour, the nodes explored and the node count of exhaustive search.

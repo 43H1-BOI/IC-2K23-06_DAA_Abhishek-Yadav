@@ -1,0 +1,9 @@
+PURPOSE
+Solve TSP by trying every tour; it shows the cost of brute force.
+
+HOW THE CODE WORKS
+1. cost[i][j] is the travel cost; the diagonal is 0 and is not asked for.
+2. path[] is the tour being built (path[0] = 0 always), visited[] marks used cities.
+3. tryAllTours(depth, costSoFar) adds each unvisited city in turn, recurses, then unmarks it (backtracking) so the next city can be tried in that position.
+4. When depth == n the tour is complete: the cost of returning to city 0 is added, 'toursChecked' increases, and if it is cheaper than bestCost the tour is saved.
+5. The result shows the cheapest cost, the tour and how many tours were checked ((n-1)!).

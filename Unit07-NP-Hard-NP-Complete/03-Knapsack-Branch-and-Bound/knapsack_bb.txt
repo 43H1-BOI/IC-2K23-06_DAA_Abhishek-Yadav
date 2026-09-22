@@ -1,0 +1,9 @@
+PURPOSE
+Solve 0/1 knapsack with a search tree that discards branches which cannot win.
+
+HOW THE CODE WORKS
+1. Items are sorted by value/weight (cross-multiplication avoids decimals); id[] remembers the original item numbers.
+2. upperBound() fills the free capacity greedily with the remaining items and takes a fraction of the first one that does not fit. No real solution in that subtree can be better.
+3. explore(i, usedWeight, currentValue) first records a new best. Then it stops if all items are decided or the bound is <= bestValue.
+4. Otherwise it takes item i (only if it fits) and then skips it, recursing each time.
+5. The output lists the item numbers taken and how many nodes were visited out of 2^(n+1)-1 possible.

@@ -1,0 +1,9 @@
+PURPOSE
+Find the cheapest worker-to-job assignment while skipping hopeless branches.
+
+HOW THE CODE WORKS
+1. taken[j] says whether job j is already given out; current[] and best[] store worker->job choices.
+2. lowerBound(fromWorker) adds, for each worker who still has no job, the smallest cost among jobs not taken. No valid completion can be cheaper than this, so it is an optimistic estimate.
+3. assign(worker, costSoFar) tries each free job. It continues only if costSoFar + new cost + lowerBound is strictly less than bestCost; otherwise the branch is pruned.
+4. A complete assignment that beats bestCost becomes the new best, which makes later pruning stronger.
+5. 'nodes' counts explored partial assignments, so the saving is visible.
