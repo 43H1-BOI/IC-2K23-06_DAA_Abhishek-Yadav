@@ -81,9 +81,3 @@ Performance programs should be compiled with optimisation: `g++ -O2 sort_perform
 - `<name>.cpp` - the program (algorithm kept simple; measurement code lives in separate performance programs)
 - `<name>.txt` - short code explanation (same file name)
 - `README.md` - problem statement, approach, pseudocode, flowchart, dry run, complexity, sample run, learning outcomes
-
-## Performance-analysis experiments
-`Unit01/03-Performance-Measurement` (linear vs binary search) and `Unit02/06-Sorting-Performance` (merge, quick, heap sort) generate increasing input sizes, measure time with `std::chrono` and print CSV. The CSV files and graphs are in `docs/complexity-analysis/`, with theoretical-vs-empirical comparison in the program READMEs and in `docs/performance-analysis.pdf`. Counting experiments (Fibonacci calls, TSP nodes, operation counts) are stored there too.
-
-## Git workflow used
-One branch per unit (`unit01-...`), merged into `main` after the unit was complete; one commit per major program/unit with a meaningful message. Push with `git remote add origin <your-url>` then `git push -u origin --all`.
