@@ -1,4 +1,5 @@
 #include<iostream>
+#include "BinarySearch.h"
 using namespace std;
 
 int BinarySearch(int *arr , int size , int element){
@@ -39,8 +40,14 @@ int BinarySearchRecc(int *arr , int start , int end , int element){
 // 6
 
 int main(){
+    int arr[] = {1 ,3 ,4 ,5 ,7 ,8 ,9 ,11 ,13};
+    int res = BinarySearch(arr , 9 , 8);
 
-
+    if(res != -1){
+        cout << "Item is at Index : " << res ;
+    } else {
+        cout << "Item Not Found !" ;
+    }
 
     return 0;
 }
